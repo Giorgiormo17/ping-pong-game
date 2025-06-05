@@ -143,6 +143,7 @@ function App() {
     newSocket.on('scoreUpdate', (data: ScoreUpdate) => {
         setPlayer1Score(data.player1Score);
         setPlayer2Score(data.player2Score);
+        playSound(scoreSound);
     });
 
     newSocket.on('gameOver', (data: { winnerName: string }) => {
